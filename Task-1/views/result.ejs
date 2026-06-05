@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="result-cont">
+    <div class="success-circle">
+        <div class="checkmark"></div>
+    </div>
+
+    <h1>Form Submitted Successfully</h1>
+
+    <h2>Welcome <%= username %></h2>
+
+    <h3>Your Profile</h3>
+    <div class="info">
+        <span>Name - <%= username %></span>
+        <span>Email - <%= email %></span>
+        <span>Phone - <%= phone %></span>
+    </div>
+
+    <a href="/" class="back-btn">Go Back</a>
+</div>
+</body>
+</html>

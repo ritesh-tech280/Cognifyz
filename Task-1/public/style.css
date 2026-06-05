@@ -1,0 +1,225 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fb;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.container h1 {
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 18px;
+    color: #374151;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+
+.form-input::placeholder {
+    color: #9ca3af;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 28px;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #4f46e5;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.result-cont {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: 90%;
+    max-width: 500px;
+}
+
+.result-cont h1 {
+    color: #16a34a;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.result-cont h2 {
+    color: #374151;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* Animated Success Circle */
+.success-circle {
+    width: 100px;
+    height: 100px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    animation: pop 0.6s ease-out;
+    box-shadow: 0 0 0 rgba(34, 197, 94, 0.5);
+}
+
+.success-circle::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    border: 3px solid #22c55e;
+    animation: pulse 1.8s infinite;
+}
+
+.checkmark {
+    position: absolute;
+    left: 40px;
+    top: 25px;
+    width: 22px;
+    height: 40px;
+    border-right: 6px solid white;
+    border-bottom: 6px solid white;
+    transform: rotate(45deg);
+    animation: check 0.5s ease forwards;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 10px;
+    background: #22c55e;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+@keyframes check {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(45deg) scale(1);
+    }
+}
+
+.result-cont h3 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #1f2937;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.info {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info span {
+    background: #ffffff;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border-left: 4px solid #22c55e;
+    color: #374151;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.info span:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+}

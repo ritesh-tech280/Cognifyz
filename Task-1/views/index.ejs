@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+    <h1>User Registeration</h1>
+     <form action="/submit" method="POST">
+        <label class="form-label" for="name">Name</label>
+        <input id="name" class="form-input" type="text" name="name" placeholder="Enter your name"> 
+        <label class="form-label" for="email">Email</label>
+        <input id="email" class="form-input"  type="email" name="email" placeholder="Enter your email">
+        <label class="form-label" for="phone">Phone</label>
+        <input id="phone" class="form-input"type="tel" name="phone" placeholder="Enter your phone">
+        <button class="btn" type="submit">Submit</button>
+     </form>
+    </div>
+</body>
+</html>
