@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Form - with validation</title>
+</head>
+
+<body>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; padding: 4px; box-sizing: border-box;">
+    
+    <div style="background-color: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02); width: 100%; max-width: 600px; box-sizing: border-box; backdrop-filter: blur(10px);">
+        
+         
+        <div style="text-align: center; margin-bottom: 32px;">
+            <h1 style="margin: 0 0 8px 0; color: #1e293b; font-size: 32px; font-weight: 800; letter-spacing: -0.5px;">Create Account</h1>
+            <p style="margin: 0; color: #64748b; font-size: 14px;">Please fill in your details to register.</p>
+        </div>
+        
+        <form action="/submit" method="POST" onsubmit="return valiationForm()" style="display: flex; flex-direction: column; gap: 20px;">
+            
+            
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="name" style="font-weight: 600; color: #334155; font-size: 13px; letter-spacing: 0.3px; text-transform: uppercase;">Full Name</label>
+                <input id="name" type="text" placeholder="John Doe" name="name" style="padding: 14px 16px; border-radius: 12px; border: 1.5px solid #e2e8f0; outline: none; box-sizing: border-box; font-size: 15px; color: #1e293b; background-color: #f8fafc; transition: all 0.2s ease;">
+            </div>
+            
+       
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="email" style="font-weight: 600; color: #334155; font-size: 13px; letter-spacing: 0.3px; text-transform: uppercase;">Email Address</label>
+                <input id="email" type="email" placeholder="you@example.com" name="email" style="padding: 14px 16px; border-radius: 12px; border: 1.5px solid #e2e8f0; outline: none; box-sizing: border-box; font-size: 15px; color: #1e293b; background-color: #f8fafc; transition: all 0.2s ease;">
+            </div>
+            
+            
+            <div style="display: flex; gap: 16px; width: 100%;">
+  
+                <div style="display: flex; flex-direction: column; gap: 6px; flex: 1;">
+                    <label for="age" style="font-weight: 600; color: #334155; font-size: 13px; letter-spacing: 0.3px; text-transform: uppercase;">Age</label>
+                    <input id="age" type="text" placeholder="21" name="age" style="padding: 14px 16px; border-radius: 12px; border: 1.5px solid #e2e8f0; outline: none; box-sizing: border-box; font-size: 15px; color: #1e293b; background-color: #f8fafc; width: 100%; transition: all 0.2s ease;">
+                </div>
+               
+                <div style="display: flex; flex-direction: column; gap: 6px; flex: 2;">
+                    <label for="phone" style="font-weight: 600; color: #334155; font-size: 13px; letter-spacing: 0.3px; text-transform: uppercase;">Phone</label>
+                    <input id="phone" type="tel" placeholder="7668204530" name="phone" style="padding: 14px 16px; border-radius: 12px; border: 1.5px solid #e2e8f0; outline: none; box-sizing: border-box; font-size: 15px; color: #1e293b; background-color: #f8fafc; width: 100%; transition: all 0.2s ease;">
+                </div>
+            </div>
+            
+        
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="password" style="font-weight: 600; color: #334155; font-size: 13px; letter-spacing: 0.3px; text-transform: uppercase;">Password</label>
+                <input type="password" name="password" id="password" placeholder="••••••••" style="padding: 14px 16px; border-radius: 12px; border: 1.5px solid #e2e8f0; outline: none; box-sizing: border-box; font-size: 15px; color: #1e293b; background-color: #f8fafc; transition: all 0.2s ease;">
+            </div>
+            
+             
+            <button style="padding: 16px; border-radius: 12px; background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); color: white; border: none; margin-top: 12px; cursor: pointer; font-weight: 700; font-size: 16px; letter-spacing: 0.5px; box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3); transition: all 0.2s ease-in-out;">
+                Create Account
+            </button>
+
+        </form>
+    </div>
+</div>
+
+
+
+    <script>
+        function valiationForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const age = parseInt(document.getElementById("age").value);
+            const phone = document.getElementById("phone").value;
+            const password = document.getElementById("password").value;
+
+            if (name === "" || email === "" || age === "" || phone === "" || password === "") {
+                alert("All fields are required")
+                return false
+            }
+            if (name === "") {
+                alert("Please Enter the name")
+                return false
+            }
+            if (!email.includes("@")) {
+                alert("Enter valid email")
+                return false
+            }
+            if (age < 18) {
+                alert("The age must 18 or above")
+                return false
+            }
+            if(phone.length < 10 && phone.length > 10){
+                alert("Phone number should 10 digits")
+            }
+            if (password.length < 4) {
+                alert("Password must atleast 4 characters")
+                return false
+            }
+            
+            console.log(name)
+            return true
+        }
+    </script>
+</body>
+
+</html>
