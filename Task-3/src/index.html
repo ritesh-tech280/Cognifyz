@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexaAI - Supercharge Your Productivity with AI</title>
+  <meta name="description" content="NexaAI is your all-in-one AI assistant. Create, automate, analyze and scale your work.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','sans-serif'] },
+          colors: { brand: '#6C63FF', cyan: '#00D4FF' },
+          animation: { float:'float 5s ease-in-out infinite', 'pulse-glow':'pulse-glow 3s ease-in-out infinite' },
+          keyframes: {
+            float:{'0%,100%':{transform:'translateY(0)'},'50%':{transform:'translateY(-18px)'}},
+            'pulse-glow':{'0%,100%':{boxShadow:'0 0 20px rgba(108,99,255,.4)'},'50%':{boxShadow:'0 0 50px rgba(0,212,255,.5)'}}
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet">
+ 
+  
+</head>
+<body>
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar" class="fixed top-0 w-full z-50 glass transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="#home" class="flex items-center gap-2.5">
+        <div class="w-8 h-8 gbtn rounded-lg flex items-center justify-center shadow-lg">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <span class="text-xl font-bold tracking-tight">NexaAI</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#solutions" class="nav-link">Solutions</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#pricing" class="gbtn text-white text-sm font-semibold px-5 py-2.5 rounded-xl hidden sm:block">Get Started</a>
+        <button id="menuBtn" class="md:hidden text-gray-300 hover:text-white p-1" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden">
+      <a href="#home" class="nav-link text-sm">Home</a>
+      <a href="#features" class="nav-link text-sm">Features</a>
+      <a href="#pricing" class="nav-link text-sm">Pricing</a>
+      <a href="#testimonials" class="nav-link text-sm">Testimonials</a>
+      <a href="#faq" class="nav-link text-sm">FAQ</a>
+      <a href="#pricing" class="gbtn text-white text-sm font-semibold px-5 py-2.5 rounded-xl text-center w-full">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="home" class="relative min-h-screen hero-grid flex items-center pt-16 overflow-hidden">
+  <div class="blob1 top-1/4 -left-32"></div>
+  <div class="blob2 bottom-1/4 -right-32"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="fade-in">
+        <div class="inline-flex items-center gap-2 glass border border-purple-500/30 rounded-full px-4 py-2 text-sm text-purple-300 mb-8">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          ✦ The Future of AI is Here
+        </div>
+        <h1 class="text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.08] mb-6 tracking-tight">
+          Supercharge Your<br>Productivity with <span class="gtext">AI</span>
+        </h1>
+        <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-lg">NexaAI is your all-in-one AI assistant that helps you create, automate, analyze and scale your work like never before.</p>
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="#pricing" id="hero-cta" class="gbtn text-white font-semibold px-8 py-4 rounded-xl flex items-center gap-2 text-base">
+            Get Started for Free
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#features" class="outline-btn text-white font-semibold px-8 py-4 rounded-xl flex items-center gap-2 text-base">
+            Watch Demo
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </a>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex -space-x-3">
+            <img src="https://i.pravatar.cc/36?img=11" class="w-9 h-9 rounded-full border-2 border-purple-500" alt="u1">
+            <img src="https://i.pravatar.cc/36?img=12" class="w-9 h-9 rounded-full border-2 border-purple-500" alt="u2">
+            <img src="https://i.pravatar.cc/36?img=13" class="w-9 h-9 rounded-full border-2 border-purple-500" alt="u3">
+            <img src="https://i.pravatar.cc/36?img=14" class="w-9 h-9 rounded-full border-2 border-purple-500" alt="u4">
+          </div>
+          <div>
+            <div class="flex text-yellow-400 text-sm gap-0.5">★★★★★</div>
+            <p class="text-gray-400 text-xs mt-0.5">10,000+ users trust NexaAI</p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:block animate-float relative fade-in" style="transition-delay:.2s">
+        <div class="absolute -inset-6 rounded-3xl" style="background:linear-gradient(135deg,rgba(108,99,255,.25),rgba(0,212,255,.15));filter:blur(30px)"></div>
+        <img src="./dashboard.png" alt="NexaAI Dashboard Mockup" class="relative rounded-2xl border border-white/10 w-full shadow-2xl glow-ring">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUSTED LOGOS ===== -->
+<section id="solutions" class="py-16 border-y border-white/5 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 mb-8">
+    <p class="text-center text-gray-500 text-xs font-semibold uppercase tracking-[.2em]">Trusted by leading companies</p>
+  </div>
+  <div class="overflow-hidden">
+    <div class="logo-track">
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">Google</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">Microsoft</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">slack</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">airbnb</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">Pinterest</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">amazon</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">Shopify</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">Stripe</span>
+      <!-- duplicate for loop -->
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">Google</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">Microsoft</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">slack</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">airbnb</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">Pinterest</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">amazon</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">Shopify</span>
+      <span class="text-gray-500 hover:text-white transition-colors text-xl font-bold cursor-default shrink-0">Stripe</span>
+    </div>
+  </div>
+</section>
+<!-- ===== FEATURES ===== -->
+<section id="features" class="py-28 relative">
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 0%,rgba(108,99,255,.12),transparent 65%)"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in">
+      <p class="text-purple-400 text-xs font-bold uppercase tracking-[.2em] mb-4">FEATURES</p>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">Everything you need,<br>powered by <span class="gtext">AI</span></h2>
+      <p class="text-gray-400 max-w-xl mx-auto">One platform. Infinite possibilities. Built for teams that want to move faster.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="glass rounded-2xl p-6 card-hover group fade-in border border-transparent">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300" style="background:rgba(108,99,255,.15);border:1px solid rgba(108,99,255,.3)">
+          <svg class="w-6 h-6" style="color:#a78bfa" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">AI Chat Assistant</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Get instant answers, generate content, and automate conversations at scale.</p>
+        <div class="mt-5 flex items-center gap-1.5 text-sm font-semibold" style="color:#a78bfa">Learn more <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover group fade-in border border-transparent" style="transition-delay:.08s">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300" style="background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3)">
+          <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Smart Automation</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Automate repetitive tasks and workflows to save time and increase efficiency.</p>
+        <div class="mt-5 flex items-center gap-1.5 text-sm font-semibold text-blue-400">Learn more <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover group fade-in border border-transparent" style="transition-delay:.16s">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300" style="background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3)">
+          <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Advanced Analytics</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Analyze data with AI-powered insights and make better decisions faster.</p>
+        <div class="mt-5 flex items-center gap-1.5 text-sm font-semibold text-emerald-400">Learn more <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover group fade-in border border-transparent" style="transition-delay:.24s">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300" style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3)">
+          <svg class="w-6 h-6 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Enterprise Security</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Bank-level encryption and privacy controls keep your data safe always.</p>
+        <div class="mt-5 flex items-center gap-1.5 text-sm font-semibold text-rose-400">Learn more <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="py-10 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="glass-strong rounded-3xl p-10 lg:p-14 glow-ring grid grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
+      <div class="text-center">
+        <div class="stat-num mb-1">10K+</div>
+        <p class="text-gray-400 text-sm font-medium">Active Users</p>
+      </div>
+      <div class="text-center">
+        <div class="stat-num mb-1">50K+</div>
+        <p class="text-gray-400 text-sm font-medium">Tasks Automated</p>
+      </div>
+      <div class="text-center">
+        <div class="stat-num mb-1">84K+</div>
+        <p class="text-gray-400 text-sm font-medium">Hours Saved</p>
+      </div>
+      <div class="text-center">
+        <div class="stat-num mb-1">98%</div>
+        <p class="text-gray-400 text-sm font-medium">Customer Satisfaction</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" class="py-28 relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 100%,rgba(0,212,255,.08),transparent 60%)"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in">
+      <p class="text-purple-400 text-xs font-bold uppercase tracking-[.2em] mb-4">TESTIMONIALS</p>
+      <h2 class="text-4xl lg:text-5xl font-black">Loved by users <span class="gtext">around the world</span></h2>
+    </div>
+    <div class="flex flex-col gap-6 mt-10 mask-gradient overflow-hidden">
+      <!-- Row 1: Sliding Left -->
+      <div class="w-full overflow-hidden py-2">
+        <div class="testimonials-track-1">
+          <!-- Card 1 -->
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-transparent group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(108,99,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"NexaAI has completely transformed how we work. It's like having a super assistant 24/7."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=5" class="w-10 h-10 rounded-full border-2 border-purple-500/60" alt="Sarah Johnson">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Sarah Johnson</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Marketing Manager, TechCorp</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-purple-500/20 group" style="background:rgba(108,99,255,.07)">
+            <div class="text-4xl font-black mb-3" style="color:rgba(0,212,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"The automation features saved us hundreds of hours. Highly recommended to any team."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=8" class="w-10 h-10 rounded-full border-2 border-blue-500/60" alt="Michael Chen">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Michael Chen</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">CTO, TechFlow</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-transparent group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(108,99,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"Intuitive, powerful, and reliable. NexaAI is a must-have for any modern team."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=9" class="w-10 h-10 rounded-full border-2 border-purple-500/60" alt="Emily Davis">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Emily Davis</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Product Designer, Notion</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-white/10 group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(0,212,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"Our team's development speed has skyrocketed. The AI assistance is incredibly precise."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=11" class="w-10 h-10 rounded-full border-2 border-blue-500/60" alt="David K.">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">David K.</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Lead Engineer, Vercel</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+
+          <!-- Duplicates for looping -->
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-transparent group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(108,99,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"NexaAI has completely transformed how we work. It's like having a super assistant 24/7."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=5" class="w-10 h-10 rounded-full border-2 border-purple-500/60" alt="Sarah Johnson">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Sarah Johnson</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Marketing Manager, TechCorp</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-purple-500/20 group" style="background:rgba(108,99,255,.07)">
+            <div class="text-4xl font-black mb-3" style="color:rgba(0,212,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"The automation features saved us hundreds of hours. Highly recommended to any team."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=8" class="w-10 h-10 rounded-full border-2 border-blue-500/60" alt="Michael Chen">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Michael Chen</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">CTO, TechFlow</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-transparent group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(108,99,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"Intuitive, powerful, and reliable. NexaAI is a must-have for any modern team."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=9" class="w-10 h-10 rounded-full border-2 border-purple-500/60" alt="Emily Davis">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Emily Davis</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Product Designer, Notion</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-white/10 group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(0,212,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"Our team's development speed has skyrocketed. The AI assistance is incredibly precise."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=11" class="w-10 h-10 rounded-full border-2 border-blue-500/60" alt="David K.">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">David K.</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Lead Engineer, Vercel</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Sliding Right -->
+      <div class="w-full overflow-hidden py-2">
+        <div class="testimonials-track-2">
+          <!-- Card A -->
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-white/10 group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(0,212,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"We moved all our documentation templates to NexaAI. It's incredibly fast and accurate."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=17" class="w-10 h-10 rounded-full border-2 border-blue-500/60" alt="Jessica M.">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Jessica M.</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Product Manager, Figma</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <!-- Card B -->
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-transparent group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(108,99,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"Running a small startup is tough, but NexaAI handles automation like a team of five."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=33" class="w-10 h-10 rounded-full border-2 border-purple-500/60" alt="Alex R.">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Alex R.</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Founder, SaaSify</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <!-- Card C -->
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-purple-500/20 group" style="background:rgba(108,99,255,.07)">
+            <div class="text-4xl font-black mb-3" style="color:rgba(0,212,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"The pricing is extremely fair, and the performance is unparalleled. Highly satisfied."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=21" class="w-10 h-10 rounded-full border-2 border-blue-500/60" alt="Liam O.">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Liam O.</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Growth Lead, Stripe</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <!-- Card D -->
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-transparent group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(108,99,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"NexaAI has made smart workflow automation a breeze. A delightful user experience."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=22" class="w-10 h-10 rounded-full border-2 border-purple-500/60" alt="Sophia W.">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Sophia W.</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Operations Lead, Uber</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+
+          <!-- Duplicates for looping -->
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-white/10 group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(0,212,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"We moved all our documentation templates to NexaAI. It's incredibly fast and accurate."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=17" class="w-10 h-10 rounded-full border-2 border-blue-500/60" alt="Jessica M.">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Jessica M.</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Product Manager, Figma</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-transparent group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(108,99,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"Running a small startup is tough, but NexaAI handles automation like a team of five."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=33" class="w-10 h-10 rounded-full border-2 border-purple-500/60" alt="Alex R.">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Alex R.</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Founder, SaaSify</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-purple-500/20 group" style="background:rgba(108,99,255,.07)">
+            <div class="text-4xl font-black mb-3" style="color:rgba(0,212,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"The pricing is extremely fair, and the performance is unparalleled. Highly satisfied."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=21" class="w-10 h-10 rounded-full border-2 border-blue-500/60" alt="Liam O.">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Liam O.</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Growth Lead, Stripe</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+          <div class="glass rounded-2xl p-7 w-[360px] flex-shrink-0 border border-transparent group">
+            <div class="text-4xl font-black mb-3" style="color:rgba(108,99,255,.5)">"</div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-5">"NexaAI has made smart workflow automation a breeze. A delightful user experience."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/44?img=22" class="w-10 h-10 rounded-full border-2 border-purple-500/60" alt="Sophia W.">
+              <div class="flex-1">
+                <p class="font-semibold text-xs text-white">Sophia W.</p>
+                <p class="text-gray-500 text-[10px] mt-0.5">Operations Lead, Uber</p>
+              </div>
+              <div class="text-yellow-400 text-xs tracking-tight">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING + FAQ (side-by-side on xl) ===== -->
+<section class="py-28 relative">
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 20% 50%,rgba(108,99,255,.09),transparent 55%)"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid xl:grid-cols- gap-16">
+
+      <!-- PRICING -->
+      <div id="pricing">
+        <div class="mb-12 fade-in">
+          <p class="text-purple-400 text-xs font-bold uppercase tracking-[.2em] mb-4">PRICING</p>
+          <h2 class="text-4xl font-black">Simple,<br>transparent pricing</h2>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-5">
+          <!-- Basic -->
+          <div class="glass rounded-2xl p-6 card-hover border border-white/8 flex flex-col fade-in">
+            <p class="text-gray-400 text-xs font-semibold mb-1">Basic</p>
+            <p class="text-gray-500 text-xs mb-4">Perfect for individuals</p>
+            <div class="flex items-end gap-1 mb-5">
+              <span class="text-3xl font-black">$0</span>
+              <span class="text-gray-500 text-sm mb-1">/month</span>
+            </div>
+            <a href="#" class="outline-btn text-white text-sm font-semibold py-2.5 px-4 rounded-xl text-center mb-6">Get Started</a>
+            <ul class="space-y-2.5 text-sm text-gray-400 flex-1">
+              <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 10 AI Chats / day</li>
+              <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Basic Templates</li>
+              <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Standard Support</li>
+            </ul>
+          </div>
+          <!-- Pro -->
+          <div class="pricing-popular glass rounded-2xl p-6 flex flex-col card-hover fade-in" style="transition-delay:.1s">
+            <p class="text-white text-xs font-semibold mb-1">Pro</p>
+            <p class="text-gray-400 text-xs mb-4">Ideal for professionals</p>
+            <div class="flex items-end gap-1 mb-5">
+              <span class="text-3xl font-black">$19</span>
+              <span class="text-gray-400 text-sm mb-1">/month</span>
+            </div>
+            <a href="#" class="gbtn text-white text-sm font-semibold py-2.5 px-4 rounded-xl text-center mb-6">Start Free Trial</a>
+            <ul class="space-y-2.5 text-sm text-gray-300 flex-1">
+              <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Unlimited AI Chats</li>
+              <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Advanced Templates</li>
+              <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Priority Support</li>
+              <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Analytics & Insights</li>
+            </ul>
+          </div>
+          <!-- Enterprise -->
+          <div class="glass rounded-2xl p-6 card-hover border border-white/8 flex flex-col fade-in" style="transition-delay:.2s">
+            <p class="text-gray-400 text-xs font-semibold mb-1">Enterprise</p>
+            <p class="text-gray-500 text-xs mb-4">For large teams</p>
+            <div class="flex items-end gap-1 mb-5">
+              <span class="text-3xl font-black">$49</span>
+              <span class="text-gray-500 text-sm mb-1">/month</span>
+            </div>
+            <a href="#" class="outline-btn text-white text-sm font-semibold py-2.5 px-4 rounded-xl text-center mb-6">Contact Sales</a>
+            <ul class="space-y-2.5 text-sm text-gray-400 flex-1">
+              <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Everything in Pro</li>
+              <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Team Collaboration</li>
+              <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Advanced Security</li>
+              <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Dedicated Support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div id="faq">
+        <div class="mb-12 fade-in">
+          <p class="text-purple-400 text-xs font-bold uppercase tracking-[.2em] mb-4">FAQ</p>
+          <h2 class="text-4xl font-black">Frequently asked<br>questions</h2>
+        </div>
+        <div class="space-y-3 fade-in">
+          <div class="faq-item glass rounded-2xl border border-white/8 overflow-hidden">
+            <button class="faq-btn w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors">
+              <span class="font-semibold text-sm">What is NexaAI?</span>
+              <span class="faq-icon text-xl text-purple-400 flex-shrink-0 ml-4">+</span>
+            </button>
+            <div class="faq-body px-5 text-gray-400 text-sm leading-relaxed">
+              NexaAI is an all-in-one AI platform that combines chat, automation, analytics, and security tools to supercharge your team's productivity.
+            </div>
+          </div>
+          <div class="faq-item glass rounded-2xl border border-white/8 overflow-hidden">
+            <button class="faq-btn w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors">
+              <span class="font-semibold text-sm">How does the free trial work?</span>
+              <span class="faq-icon text-xl text-purple-400 flex-shrink-0 ml-4">+</span>
+            </button>
+            <div class="faq-body px-5 text-gray-400 text-sm leading-relaxed">
+              Start with a 14-day free trial on any paid plan. No credit card required. You'll get full access to all features during the trial period.
+            </div>
+          </div>
+          <div class="faq-item glass rounded-2xl border border-white/8 overflow-hidden">
+            <button class="faq-btn w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors">
+              <span class="font-semibold text-sm">Can I cancel anytime?</span>
+              <span class="faq-icon text-xl text-purple-400 flex-shrink-0 ml-4">+</span>
+            </button>
+            <div class="faq-body px-5 text-gray-400 text-sm leading-relaxed">
+              Yes, absolutely. You can cancel your subscription at any time from your dashboard. No hidden fees or penalties.
+            </div>
+          </div>
+          <div class="faq-item glass rounded-2xl border border-white/8 overflow-hidden">
+            <button class="faq-btn w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors">
+              <span class="font-semibold text-sm">Is my data secure?</span>
+              <span class="faq-icon text-xl text-purple-400 flex-shrink-0 ml-4">+</span>
+            </button>
+            <div class="faq-body px-5 text-gray-400 text-sm leading-relaxed">
+              Yes. We use bank-level AES-256 encryption, SOC 2 compliance, and zero-data-retention policies to ensure your data stays private and secure.
+            </div>
+          </div>
+          <div class="faq-item glass rounded-2xl border border-white/8 overflow-hidden">
+            <button class="faq-btn w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors">
+              <span class="font-semibold text-sm">Do you offer team plans?</span>
+              <span class="faq-icon text-xl text-purple-400 flex-shrink-0 ml-4">+</span>
+            </button>
+            <div class="faq-body px-5 text-gray-400 text-sm leading-relaxed">
+              Yes! Our Enterprise plan includes team collaboration features, admin controls, SSO, and dedicated account management.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== CTA BANNER ===== -->
+<section class="py-16 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="relative rounded-3xl overflow-hidden fade-in" style="background:linear-gradient(135deg,rgba(108,99,255,.25),rgba(0,212,255,.15));border:1px solid rgba(108,99,255,.3)">
+      <div class="absolute inset-0" style="background:radial-gradient(ellipse at 70% 50%,rgba(0,212,255,.15),transparent 60%)"></div>
+      <div class="relative flex flex-col lg:flex-row items-center justify-between gap-8 p-10 lg:p-14">
+        <div class="flex items-center gap-6">
+          <div class="w-16 h-16 gbtn rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg" style="animation:float 4s ease-in-out infinite">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div>
+            <h2 class="text-2xl lg:text-3xl font-black mb-1">Ready to boost your productivity?</h2>
+            <p class="text-gray-300 text-sm">Join thousands of users and experience the power of AI.</p>
+          </div>
+        </div>
+        <a href="#pricing" class="gbtn text-white font-bold px-8 py-4 rounded-xl text-base flex items-center gap-2 flex-shrink-0 whitespace-nowrap">
+          Get Started for Free
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contact" class="pt-20 pb-10 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-8 h-8 gbtn rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <span class="text-xl font-bold">NexaAI</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">The all-in-one AI assistant to automate, analyze and scale your work.</p>
+        <div class="flex items-center gap-3">
+          <a href="#" aria-label="Twitter" class="w-9 h-9 glass rounded-lg flex items-center justify-center hover:border-purple-500/50 transition-colors border border-transparent">
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="w-9 h-9 glass rounded-lg flex items-center justify-center hover:border-purple-500/50 transition-colors border border-transparent">
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub" class="w-9 h-9 glass rounded-lg flex items-center justify-center hover:border-purple-500/50 transition-colors border border-transparent">
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="w-9 h-9 glass rounded-lg flex items-center justify-center hover:border-purple-500/50 transition-colors border border-transparent">
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- Product -->
+      <div>
+        <h4 class="font-bold text-sm mb-5 text-white">Product</h4>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Templates</a></li>
+          <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Updates</a></li>
+        </ul>
+      </div>
+      <!-- Company -->
+      <div>
+        <h4 class="font-bold text-sm mb-5 text-white">Company</h4>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+          <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Newsletter -->
+      <div>
+        <h4 class="font-bold text-sm mb-2 text-white">Newsletter</h4>
+        <p class="text-gray-400 text-xs mb-4 leading-relaxed">Subscribe to get the latest updates and news from NexaAI.</p>
+        <form id="newsletter-form" class="flex gap-2" onsubmit="handleNewsletter(event)">
+          <input id="newsletter-email" type="email" placeholder="Enter your email" required class="flex-1 glass rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 border border-white/10 min-w-0 transition-all">
+          <button type="submit" class="gbtn text-white p-2.5 rounded-xl flex items-center justify-center flex-shrink-0 hover:scale-105 transition-transform">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+          </button>
+        </form>
+        <p id="newsletter-msg" class="text-green-400 text-xs mt-2 hidden">✓ You're subscribed!</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-500 text-sm">© 2024 NexaAI. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-sm text-gray-500">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+ 
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+   
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      nav.style.background = 'rgba(4,4,15,0.95)';
+      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
+    } else {
+      nav.style.background = '';
+      nav.style.boxShadow = '';
+    }
+  });
+
+ 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+ 
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const body = item.querySelector('.faq-body');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-body').classList.remove('open');
+      });
+      if (!isOpen) { item.classList.add('open'); body.classList.add('open'); }
+    });
+  });
+
+ 
+  function handleNewsletter(e) {
+    e.preventDefault();
+    document.getElementById('newsletter-msg').classList.remove('hidden');
+    document.getElementById('newsletter-email').value = '';
+    setTimeout(() => document.getElementById('newsletter-msg').classList.add('hidden'), 4000);
+  }
+ 
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); mobileMenu.classList.remove('open'); }
+    });
+  });
+</script>
+</body>
+</html>
+ 
