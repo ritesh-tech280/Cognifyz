@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Student Management System</title>
+    <link rel="stylesheet" href="./output.css">
+
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <h1 class="text-2xl font-bold text-blue-600">
+                StudentHub
+            </h1>
+
+            <div class="hidden md:flex items-center gap-8 text-slate-700">
+                <a href="#" class="hover:text-blue-600 transition">Home</a>
+                <a href="#features" class="hover:text-blue-600 transition">Features</a>
+                <a href="#dashboard" class="hover:text-blue-600 transition">Students</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            </div>
+
+            <button
+                class="register-btn bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-medium transition">
+                Register Student
+            </button>
+
+        </div>
+    </nav>
+
+
+    <!-- Student Registeration Model  -->
+ 
+    <div id="registerModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
+
+        <div class="bg-white w-full max-w-lg mx-4 rounded-2xl shadow-xl">
+
+            <!-- Header -->
+            <div class="flex items-center justify-between p-6 border-b">
+
+                <h2 id="modalTitle" class="text-2xl font-bold text-slate-800">
+                    Register Student
+                </h2>
+
+                <button id="closeModal" class="text-slate-500 hover:text-red-500 text-2xl">
+                    &times;
+                </button>
+
+            </div>
+
+            <!-- Form -->
+            <form class="p-6 space-y-5" id="register-form">
+
+                <!-- Name -->
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-slate-700">
+                        Full Name
+                    </label>
+
+                    <input id="name" type="text" placeholder="Enter full name"
+                        class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <p id="nameError" class="text-red-500 text-sm mt-1"></p>
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-slate-700">
+                        Email Address
+                    </label>
+
+                    <input id="email" type="email" placeholder="student@example.com"
+                        class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <p id="emailError" class="text-red-500 text-sm mt-1"></p>
+                </div>
+
+                <!-- Course -->
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-slate-700">
+                        Course
+                    </label>
+
+                    <select id="course"
+                        class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                        <option>Select Course</option>
+                         
+
+                    </select>
+                    <p id="courseError" class="text-red-500 text-sm mt-1"></p>
+                </div>
+
+                <!-- Phone -->
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-slate-700">
+                        Phone Number
+                    </label>
+
+                    <input id="phone" type="tel" placeholder="+91 XXXXX XXXXX"
+                        class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <p id="phoneError" class="text-red-500 text-sm mt-1"></p>
+                </div>
+
+                <!-- Status -->
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-slate-700">
+                        Status
+                    </label>
+
+                    <select id="status"
+                        class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                        <option>Active</option>
+                        <option>Pending</option>
+
+                    </select>
+                    <p id="statusError" class="text-red-500 text-sm mt-1"></p>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex justify-end gap-3 pt-4">
+
+                    <button type="button" id="cancelBtn"
+                        class="px-5 py-3 border border-slate-300 rounded-xl hover:bg-slate-100 transition">
+
+                        Cancel
+
+                    </button>
+
+                    <button type="submit"
+                        class="register-btn px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">
+
+                        Register Student
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+
+        <div class="absolute top-0 left-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute right-0 bottom-0 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
+
+        <div class="max-w-7xl mx-auto px-6 py-24 relative">
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <div>
+
+                    <span class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
+                        Student Management Platform
+                    </span>
+
+                    <h1 class="text-5xl md:text-6xl font-bold leading-tight mt-6">
+
+                        Manage Student Records
+                        <span class="text-blue-600">
+                            Smarter
+                        </span>
+                        & Faster
+                    </h1>
+
+                    <p class="text-slate-600 text-lg mt-6 leading-relaxed">
+
+                        Streamline student information, organize records,
+                        perform CRUD operations, and manage data efficiently
+                        through a modern student management system.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 mt-10">
+
+                        <button
+                            class="register-btn bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition">
+                            Register Student
+                        </button>
+
+                        <a href="#studentTableBody"
+                            class="border border-slate-300 hover:bg-slate-100 px-6 py-3 rounded-xl font-medium transition">
+                            View Students
+                    </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Dashboard Preview -->
+                <div class="float">
+
+                    <div class="bg-white rounded-3xl border border-slate-200 shadow-xl p-6">
+
+                        <div class="flex justify-between mb-6">
+                            <div>
+                                <p class="text-slate-500 text-sm">
+                                    Total Students
+                                </p>
+                                <h2 id="total_student" class="text-3xl font-bold"> </h2>
+                            </div>
+
+                            <div>
+                                <p class="text-slate-500 text-sm">
+                                    Active
+                                </p>
+                                <h2 id="active_students" class="text-3xl font-bold text-green-600"> </h2>
+                            </div>
+                        </div>
+
+                        <div id="recentStudents" class="space-y-4">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+    <section class="py-16 bg-slate-50">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+                    <h2 class="text-4xl font-bold text-blue-600">500+</h2>
+                    <p class="text-slate-500 mt-2">Students</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+                    <h2 class="text-4xl font-bold text-green-600">95%</h2>
+                    <p class="text-slate-500 mt-2">Active Students</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+                    <h2 class="text-4xl font-bold text-purple-600">25+</h2>
+                    <p class="text-slate-500 mt-2">Courses</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+                    <h2 class="text-4xl font-bold text-orange-500">1000+</h2>
+                    <p class="text-slate-500 mt-2">Records Managed</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-24">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-14">
+
+                <h2 class="text-4xl font-bold">
+                    Powerful CRUD Operations
+                </h2>
+
+                <p class="text-slate-500 mt-4">
+                    Everything you need to manage student data efficiently.
+                </p>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div
+                    class="bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-3">Create</h3>
+                    <p class="text-slate-500">Add new student records instantly.</p>
+                </div>
+
+                <div
+                    class="bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-3">Read</h3>
+                    <p class="text-slate-500">Display data directly from your API.</p>
+                </div>
+
+                <div
+                    class="bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-3">Update</h3>
+                    <p class="text-slate-500">Modify student records anytime.</p>
+                </div>
+
+                <div
+                    class="bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-3">Delete</h3>
+                    <p class="text-slate-500">Remove outdated records securely.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DASHBOARD TABLE -->
+    <section id="dashboard" class="py-24 bg-slate-50">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-12">
+
+                <h2 class="text-4xl font-bold">
+                    Student Records Preview
+                </h2>
+
+                <p class="text-slate-500 mt-3">
+                    Example of how data will be displayed from your API.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+
+                <div class="overflow-x-auto">
+
+                    <table class="w-full">
+
+                        <thead class="bg-slate-100">
+                            <tr>
+                                <th class="text-left p-5">Name</th>
+                                <th class="text-left p-5">Email</th>
+                                <th class="text-left p-5">Phone</th>
+                                <th class="text-left p-5">Course</th>
+                                <th class="text-left p-5">Status</th>
+                                <th class="text-left p-5">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="studentTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-3xl p-12 text-center">
+
+                <h2 class="text-4xl font-bold">
+                    Ready to Manage Students Efficiently?
+                </h2>
+
+                <p class="mt-4 text-blue-100">
+                    Start organizing student information with a modern platform.
+                </p>
+
+                <button class="mt-8 register-btn bg-white text-blue-600 px-8 py-3 rounded-xl font-semibold">
+                    Register Student
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="border-t border-slate-200">
+
+        <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center">
+
+            <h2 class="text-xl font-bold text-blue-600">
+                StudentHub
+            </h2>
+
+            <p class="text-slate-500 mt-4 md:mt-0">
+                © 2026 StudentHub. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
