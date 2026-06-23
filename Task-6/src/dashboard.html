@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | InventoryPro</title>
+
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-slate-100">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm">
+
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <div>
+                <h1 class="text-2xl font-bold text-blue-600">
+                    InventoryPro
+                </h1>
+            </div>
+
+            <div class="flex items-center gap-4">
+
+                <span id="username" class="font-medium text-slate-700">
+                    Welcome User
+                </span>
+
+                <button onclick="logout()" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Main -->
+    <div class="max-w-7xl mx-auto p-6">
+
+        <!-- Heading -->
+        <div class="mb-8">
+
+            <h2 class="text-3xl font-bold">
+                Inventory Dashboard
+            </h2>
+
+            <p class="text-slate-500">
+                Manage products and monitor stock levels.
+            </p>
+
+        </div>
+
+        <!-- Stats -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+
+            <div class="bg-white rounded-xl p-6 shadow-sm border-l-5 border-amber-500">
+
+                <p class="text-slate-500">
+                    Total Products
+                </p>
+
+                <h3 id="totalProducts" class="text-3xl font-bold mt-2">
+                    0
+                </h3>
+
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-sm border-l-5 border-red-500">
+
+                <p class="text-slate-500">
+                    Low Stock
+                </p>
+
+                <h3 id="lowStock" class="text-3xl font-bold mt-2 text-red-500">
+                    0
+                </h3>
+
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-sm border-l-5 border-emerald-500">
+
+                <p class="text-slate-500">
+                    Inventory Value
+                </p>
+
+                <h3 id="inventoryValue" class="text-3xl font-bold mt-2 text-green-600">
+                    ₹0
+                </h3>
+
+            </div>
+
+        </div>
+
+        <!-- Add Product -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+
+            <h3 class="text-xl font-semibold mb-4">Add Product</h3>
+
+            <form id="productForm" class="grid md:grid-cols-4 gap-4">
+
+                <input type="text" id="productName" placeholder="Product Name" class="border p-3 rounded-lg" required>
+                <input type="text" id="productCategory" placeholder="Category" class="border p-3 rounded-lg" required>
+                <input type="number" id="productQuantity" placeholder="Quantity" class="border p-3 rounded-lg" required>
+                <input type="number" id="productPrice" placeholder="Price" class="border p-3 rounded-lg" required>
+                <button class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 md:col-span-4">Add Product</button>
+
+            </form>
+
+        </div>
+
+        <!-- Products Table -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+
+            <div class="p-6 border-b">
+
+                <h3 class="text-xl font-semibold">
+                    Products
+                </h3>
+
+            </div>
+
+            <div class="overflow-x-auto">
+
+                <table class="w-full">
+
+                    <thead class="bg-slate-50">
+
+                        <tr>
+
+                            <th class="p-4 text-left">Product</th>
+                            <th class="p-4 text-left">Category</th>
+                            <th class="p-4 text-left">Quantity</th>
+                            <th class="p-4 text-left">Price</th>
+                            <th class="p-4 text-left">Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tableBody">
+
+                        <tr><td colspan="5" class="text-center p-6 text-slate-500">No Products Found</td></tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InventoryPro | Modern Inventory & Asset Management SaaS</title>
+  <meta name="description"
+    content="InventoryPro is the ultimate cloud-based inventory management system. Gain complete control over your stock, automate ordering, and analyze performance in real time.">
+  <!-- Google Fonts Connection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+   
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body
+  class="font-sans text-slate-800 bg-white antialiased selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden">
+
+  <!-- Sticky Navbar -->
+  <header id="navbar"
+    class="sticky top-0 z-50 w-full transition-all duration-300 border-b border-transparent bg-white/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2.5 group">
+          <div
+            class="flex items-center justify-center w-10 h-10 rounded-xl bg-blue-600 text-white shadow-md shadow-blue-200 group-hover:scale-105 transition-transform duration-200">
+            <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+            </svg>
+          </div>
+          <span class="text-xl font-bold tracking-tight text-slate-900">Inventory<span
+              class="text-blue-600">Pro</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#home"
+            class="text-[15px] font-medium text-slate-600 hover:text-blue-600 transition-colors duration-150">Home</a>
+          <a href="#features"
+            class="text-[15px] font-medium text-slate-600 hover:text-blue-600 transition-colors duration-150">Features</a>
+          <a href="#test"
+            class="text-[15px] font-medium text-slate-600 hover:text-blue-600 transition-colors duration-150">Testimonials</a>
+          <a href="#contact"
+            class="text-[15px] font-medium text-slate-600 hover:text-blue-600 transition-colors duration-150">Contact</a>
+        </nav>
+
+        <!-- Desktop CTA Buttons -->
+        <div class="hidden md:flex items-center gap-4">
+          <button
+            class="loginbtn text-[15px] font-semibold text-slate-700 hover:text-blue-600 transition-colors duration-150 px-4 py-2">Log
+            in</button>
+          <button  
+            class="get-started inline-flex items-center justify-center px-4.5 py-2.5 text-[15px] font-semibold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-xl transition-all duration-150 shadow-sm hover:shadow-md shadow-blue-200/50 hover:scale-[1.02]">Get
+            Started</button>
+        </div>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button id="mobile-menu-btn" type="button"
+          class="md:hidden p-2 text-slate-600 hover:text-blue-600 rounded-lg hover:bg-slate-50 transition-colors focus:outline-none"
+          aria-label="Toggle Menu">
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="close-icon" class="hidden w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu"
+      class="hidden md:hidden absolute top-16 left-0 w-full bg-white border-b border-slate-100 shadow-lg transition-all duration-300 origin-top scale-y-95 opacity-0">
+      <div class="px-4 pt-2 pb-6 space-y-3.5">
+        <a href="#home"
+          class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors">Home</a>
+        <a href="#features"
+          class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors">Features</a>
+        <a href="#pricing"
+          class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors">Pricing</a>
+        <a href="#contact"
+          class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors">Contact</a>
+        <div class="pt-4 border-t border-slate-100 flex flex-col gap-3">
+          <button  
+            class="loginbtn w-full z-50 text-center px-4 py-2.5 text-base font-semibold text-slate-700 hover:bg-slate-50 rounded-xl transition-colors">Log
+            in</button>
+          <button  id="register"
+            class="get-started w-full text-center px-4 py-2.5 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-colors shadow-sm">Get
+            Started</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="fixed hidden inset-0 bg-black/40 z-50 items-center justify-center p-4">
+
+    <div class="bg-white w-full max-w-md rounded-2xl shadow-xl p-8">
+
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-slate-900">
+          Welcome Back
+        </h2>
+
+        <p class="text-slate-500 mt-2">
+          Sign in to your InventoryPro account
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form class="space-y-5" id="loginForm" novalidate>
+
+        <!-- Email -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">
+            Email Address
+          </label>
+
+          <input id="loginEmail" type="email" placeholder="Enter your email" autocomplete="email" required
+            class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+            <p id="emailError" class="min-h-5 text-red-500 text-sm mt-1" aria-live="polite"></p>
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">
+            Password
+          </label>
+
+          <div class="password-field">
+            <input id="loginPassword" type="password" placeholder="Enter your password" autocomplete="current-password" required
+              class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+            <button type="button" class="password-toggle" data-toggle-password="loginPassword" aria-label="Show password" aria-pressed="false">
+              <svg class="eye-open" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12s3.75-6.75 9.75-6.75S21.75 12 21.75 12 18 18.75 12 18.75 2.25 12 2.25 12z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <svg class="eye-closed hidden" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.6 10.6A2 2 0 0012 14a2 2 0 001.4-.6"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.9 5.5A9.1 9.1 0 0112 5.25c6 0 9.75 6.75 9.75 6.75a18 18 0 01-2.6 3.4"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.2 7.2A18.1 18.1 0 002.25 12s3.75 6.75 9.75 6.75c1.4 0 2.7-.35 3.85-.9"></path>
+              </svg>
+            </button>
+          </div>
+            <p id="passwordError" class="min-h-5 text-red-500 text-sm mt-1" aria-live="polite"></p>
+        </div>
+
+        <!-- Remember -->
+        <div class="flex items-center justify-between text-sm">
+
+          <label class="flex items-center gap-2 text-slate-600">
+            <input type="checkbox" class="rounded border-slate-300">
+            Remember me
+          </label>
+
+          <a href="#" class="text-blue-600 hover:underline">
+            Forgot Password?
+          </a>
+
+        </div>
+
+        <!-- Login Button -->
+        <button type="submit"
+          class="w-full bg-blue-600 text-white py-3 rounded-xl font-medium hover:bg-blue-700 transition">
+          Sign In
+        </button>
+
+        <p id="loginStatus" class="hidden text-sm text-center rounded-lg px-3 py-2" aria-live="polite"></p>
+
+      </form>
+
+      <!-- Divider -->
+      <div class="flex items-center gap-3 my-6">
+        <div class="h-px bg-slate-200 flex-1"></div>
+        <span class="text-slate-400 text-sm">OR</span>
+        <div class="h-px bg-slate-200 flex-1"></div>
+      </div>
+
+      <!-- Register -->
+      <p class="text-center text-slate-600">
+        Don't have an account?
+        <button id="signUpBtn" class="text-blue-600 font-medium hover:underline">
+          Create Account
+        </button>
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="fixed z-50 inset-0 bg-black/40 items-center justify-center p-4 hidden">
+
+    <div class="bg-white w-full max-w-md rounded-2xl shadow-xl p-8 relative">
+
+      <!-- Close Button -->
+      <button id="closeSignup" class="absolute top-4 right-5 text-slate-500 hover:text-slate-800 text-2xl">
+        &times;
+      </button>
+
+      <!-- Header -->
+      <div class="text-center mb-8">
+
+        <h2 class="text-3xl font-bold text-slate-900">
+          Create Account
+        </h2>
+
+        <p class="text-slate-500 mt-2">
+          Start managing your inventory today
+        </p>
+
+      </div>
+
+      <!-- Form -->
+      <form class="space-y-1" id="signupForm" novalidate>
+
+        <!-- Name -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">
+            Full Name
+          </label>
+
+          <input id="signupName" type="text" placeholder="Enter your name" autocomplete="name" required
+            class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            <p id="signupNameError" class="min-h-5 text-red-500 text-[11px] mt-1" aria-live="polite"></p>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">
+            Email Address
+          </label>
+
+          <input id="signupEmail"  type="email" placeholder="Enter your email" autocomplete="email" required
+            class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            <p id="signupEmailError" class="min-h-5 text-red-500 text-[11px] mt-1" aria-live="polite"></p>
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">
+            Password
+          </label>
+
+          <div class="password-field">
+            <input id="signupPassword" type="password" placeholder="Create password" autocomplete="new-password" required
+              class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            <button type="button" class="password-toggle" data-toggle-password="signupPassword" aria-label="Show password" aria-pressed="false">
+              <svg class="eye-open" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12s3.75-6.75 9.75-6.75S21.75 12 21.75 12 18 18.75 12 18.75 2.25 12 2.25 12z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <svg class="eye-closed hidden" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.6 10.6A2 2 0 0012 14a2 2 0 001.4-.6"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.9 5.5A9.1 9.1 0 0112 5.25c6 0 9.75 6.75 9.75 6.75a18 18 0 01-2.6 3.4"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.2 7.2A18.1 18.1 0 002.25 12s3.75 6.75 9.75 6.75c1.4 0 2.7-.35 3.85-.9"></path>
+              </svg>
+            </button>
+          </div>
+            <p id="signupPasswordError" class="min-h-5 text-red-500 text-[11px] mt-1" aria-live="polite"></p>
+        </div>
+
+        <!-- Confirm Password -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">
+            Confirm Password
+          </label>
+
+          <div class="password-field">
+            <input id="signupConfirmPassword" type="password" placeholder="Confirm password" autocomplete="new-password" required
+              class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            <button type="button" class="password-toggle" data-toggle-password="signupConfirmPassword" aria-label="Show password" aria-pressed="false">
+              <svg class="eye-open" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12s3.75-6.75 9.75-6.75S21.75 12 21.75 12 18 18.75 12 18.75 2.25 12 2.25 12z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <svg class="eye-closed hidden" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.6 10.6A2 2 0 0012 14a2 2 0 001.4-.6"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.9 5.5A9.1 9.1 0 0112 5.25c6 0 9.75 6.75 9.75 6.75a18 18 0 01-2.6 3.4"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.2 7.2A18.1 18.1 0 002.25 12s3.75 6.75 9.75 6.75c1.4 0 2.7-.35 3.85-.9"></path>
+              </svg>
+            </button>
+          </div>
+            <p id="signupConfirmPasswordError" class="min-h-5 text-red-500 text-[11px] mt-1" aria-live="polite"></p>
+        </div>
+
+        <!-- Terms -->
+        <label class="flex items-start gap-2 text-sm text-slate-600">
+
+          <input id="termsAccepted" type="checkbox" class="mt-1">
+
+          <span>
+            I agree to the Terms of Service and Privacy Policy
+          </span>
+
+        </label>
+        <p id="termsError" class="min-h-5 text-red-500 text-[11px] -mt-1" aria-live="polite"></p>
+
+        <!-- Submit -->
+        <button type="submit"
+          class="w-full bg-blue-600 text-white py-3 rounded-xl font-medium hover:bg-blue-700 transition">
+          Create Account
+        </button>
+
+        <p id="signupStatus" class="hidden text-sm text-center rounded-lg px-3 py-2" aria-live="polite"></p>
+
+      </form>
+
+      <!-- Divider -->
+      <div class="flex items-center gap-3 my-6">
+        <div class="flex-1 h-px bg-slate-200"></div>
+        <span class="text-slate-400 text-sm">OR</span>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+
+      <!-- Login Link -->
+      <p class="text-center text-slate-600">
+        Already have an account?
+        <button id="openLogin"  class=" text-blue-600 font-medium hover:underline">
+          Sign In
+        </button>
+      </p>
+
+    </div>
+
+  </div>
+  <!-- Hero Section -->
+  <section id="home" class="relative pt-12 pb-20 md:pt-20 md:pb-28 lg:pb-32 overflow-hidden bg-white">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 -z-10 w-96 h-96 bg-blue-50/50 rounded-full blur-3xl opacity-60"></div>
+    <div class="absolute bottom-10 left-0 -z-10 w-80 h-80 bg-slate-50 rounded-full blur-2xl opacity-80"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+        <!-- Left Side: Content -->
+        <div class="lg:col-span-5 text-center lg:text-left space-y-6">
+          <span
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide text-blue-700 bg-blue-50 border border-blue-100 uppercase">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-600 pulse-ring-blue"></span>
+            Trusted Inventory Solution
+          </span>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-[44px] font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+            Manage Inventory With Complete <span class="text-blue-600">Control</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Optimize your stock levels, automate ordering, and analyze warehouse performance in real time. Built for
+            fast-growing businesses seeking absolute accuracy.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-2">
+            <button  
+              class="get-started inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-xl transition-all duration-150 shadow-md shadow-blue-200/60 hover:scale-[1.02]">
+              Get Started Free
+          </button>
+            <button id="open-demo-btn" type="button"
+              class="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-slate-700 bg-white hover:bg-slate-50 active:bg-slate-100 rounded-xl border border-slate-200 hover:border-slate-300 transition-all duration-150 hover:scale-[1.02] gap-2">
+              <svg class="w-5 h-5 text-slate-400 group-hover:text-slate-600" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+                </path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Watch Demo
+            </button>
+          </div>
+
+          <div class="pt-6 flex items-center justify-center lg:justify-start gap-6 text-slate-500 text-xs">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4.5 h-4.5 text-green-500" fill="none" stroke="currentColor" stroke-width="3"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+              </svg>
+              No credit card required
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4.5 h-4.5 text-green-500" fill="none" stroke="currentColor" stroke-width="3"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+              </svg>
+              14-day free trial
+            </span>
+          </div>
+        </div>
+        <!-- Right Side: Dashboard Mockup -->
+        <div class="lg:col-span-7 w-full">
+          <div class="relative bg-white border border-slate-200 rounded-2xl shadow-2xl p-4 sm:p-6 overflow-hidden">
+            <!-- Simulated Active Bar -->
+            <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+              <div class="flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                <span class="text-xs font-semibold text-slate-400 ml-2 tracking-wider uppercase">Live Warehouse
+                  Dashboard</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span
+                  class="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full font-medium text-emerald-700 bg-emerald-50 border border-emerald-100">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  System Synced
+                </span>
+              </div>
+            </div>
+
+            <!-- Dashboard Stats Grid -->
+            <div class="grid grid-cols-3 gap-3.5 mb-6">
+              <div
+                class="bg-slate-50 border border-slate-100 p-3 sm:p-4 rounded-xl hover:border-blue-200 transition-colors">
+                <p class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Total Products</p>
+                <div class="flex items-baseline gap-1.5 mt-1">
+                  <h3 id="hero-stat-products" class="text-lg sm:text-2xl font-bold text-slate-900 tracking-tight">12,480
+                  </h3>
+                  <span class="text-[10px] font-bold text-emerald-600">+1.2%</span>
+                </div>
+              </div>
+
+              <div
+                class="bg-slate-50 border border-slate-100 p-3 sm:p-4 rounded-xl hover:border-blue-200 transition-colors">
+                <p class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Inventory Value</p>
+                <div class="flex items-baseline gap-1.5 mt-1">
+                  <h3 id="hero-stat-value" class="text-lg sm:text-2xl font-bold text-slate-900 tracking-tight">$358,240
+                  </h3>
+                  <span class="text-[10px] font-bold text-slate-400">USD</span>
+                </div>
+              </div>
+
+              <div
+                class="bg-amber-50/55 border border-amber-100 p-3 sm:p-4 rounded-xl hover:border-amber-200 transition-colors relative overflow-hidden group">
+                <p class="text-[11px] font-semibold text-amber-800 uppercase tracking-wider">Low Stock</p>
+                <div class="flex items-baseline gap-1.5 mt-1">
+                  <h3 id="hero-stat-low" class="text-lg sm:text-2xl font-bold text-amber-700 tracking-tight">14</h3>
+                  <span class="text-[10px] font-bold text-amber-600 animate-bounce">Alert</span>
+                </div>
+                <div
+                  class="absolute -right-2 -bottom-2 text-amber-100 opacity-20 group-hover:scale-110 transition-transform duration-300">
+                  <svg class="w-14 h-14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Products Sub-Header / Search Mockup -->
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-slate-700">Real-Time Inventory Levels</span>
+              <div class="relative w-36 sm:w-48">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-2 text-slate-400">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </span>
+                <input id="hero-search-mock" type="text" placeholder="Quick search..."
+                  class="w-full bg-slate-50 border border-slate-200 rounded-lg pl-7 pr-3 py-1 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all">
+              </div>
+            </div>
+
+            <!-- Recent Products Table Mockup -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr
+                    class="bg-slate-50 border-b border-slate-100 text-slate-500 font-semibold uppercase tracking-wider">
+                    <th class="py-2.5 px-3">Product Name</th>
+                    <th class="py-2.5 px-3">SKU</th>
+                    <th class="py-2.5 px-3">Stock Level</th>
+                    <th class="py-2.5 px-3 text-right">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="hero-table-body">
+                  <!-- Row 1 -->
+                  <tr class="border-b border-slate-100 hover:bg-slate-50/50 transition-colors group"
+                    data-product="ultra-keyboard">
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-slate-900">Ultra Wireless Keyboard</div>
+                      <div class="text-[10px] text-slate-400">Electronics</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono text-slate-500">KB-8902</td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-16 sm:w-24 bg-slate-100 rounded-full h-2 overflow-hidden">
+                          <div class="bg-blue-600 h-full rounded-full" style="width: 82%"></div>
+                        </div>
+                        <span class="font-semibold text-slate-700">82%</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3 text-right">
+                      <div class="inline-flex items-center gap-1">
+                        <button type="button"
+                          class="adjust-stock-btn p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors"
+                          data-sku="KB-8902" data-change="1" title="Add 1 stock">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path>
+                          </svg>
+                        </button>
+                        <button type="button"
+                          class="adjust-stock-btn p-1 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
+                          data-sku="KB-8902" data-change="-1" title="Subtract 1 stock">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 2 -->
+                  <tr class="border-b border-slate-100 hover:bg-slate-50/50 transition-colors group"
+                    data-product="leather-office-chair">
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-slate-900">Ergonomic Office Chair</div>
+                      <div class="text-[10px] text-slate-400">Furniture</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono text-slate-500">CH-4029</td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-16 sm:w-24 bg-slate-100 rounded-full h-2 overflow-hidden">
+                          <div class="bg-amber-500 h-full rounded-full" style="width: 15%"></div>
+                        </div>
+                        <span class="font-semibold text-slate-700">15%</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3 text-right">
+                      <div class="inline-flex items-center gap-1">
+                        <button type="button"
+                          class="adjust-stock-btn p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors"
+                          data-sku="CH-4029" data-change="1" title="Add 1 stock">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path>
+                          </svg>
+                        </button>
+                        <button type="button"
+                          class="adjust-stock-btn p-1 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
+                          data-sku="CH-4029" data-change="-1" title="Subtract 1 stock">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 3 -->
+                  <tr class="border-b border-slate-100 hover:bg-slate-50/50 transition-colors group"
+                    data-product="led-desk-lamp">
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-slate-900">LED Desk Smart Lamp</div>
+                      <div class="text-[10px] text-slate-400">Office Supplies</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono text-slate-500">LM-3311</td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-16 sm:w-24 bg-slate-100 rounded-full h-2 overflow-hidden">
+                          <div class="bg-blue-600 h-full rounded-full" style="width: 65%"></div>
+                        </div>
+                        <span class="font-semibold text-slate-700">65%</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3 text-right">
+                      <div class="inline-flex items-center gap-1">
+                        <button type="button"
+                          class="adjust-stock-btn p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors"
+                          data-sku="LM-3311" data-change="1" title="Add 1 stock">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path>
+                          </svg>
+                        </button>
+                        <button type="button"
+                          class="adjust-stock-btn p-1 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
+                          data-sku="LM-3311" data-change="-1" title="Subtract 1 stock">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 4 -->
+                  <tr class="hover:bg-slate-50/50 transition-colors group" data-product="usb-c-hub">
+                    <td class="py-3 px-3">
+                      <div class="font-medium text-slate-900">8-in-1 USB-C Hub</div>
+                      <div class="text-[10px] text-slate-400">Electronics</div>
+                    </td>
+                    <td class="py-3 px-3 font-mono text-slate-500">HB-1020</td>
+                    <td class="py-3 px-3">
+                      <div class="flex items-center gap-2">
+                        <div class="w-16 sm:w-24 bg-slate-100 rounded-full h-2 overflow-hidden">
+                          <div class="bg-red-500 h-full rounded-full" style="width: 4%"></div>
+                        </div>
+                        <span class="font-semibold text-slate-700">4%</span>
+                      </div>
+                    </td>
+                    <td class="py-3 px-3 text-right">
+                      <div class="inline-flex items-center gap-1">
+                        <button type="button"
+                          class="adjust-stock-btn p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors"
+                          data-sku="HB-1020" data-change="1" title="Add 1 stock">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path>
+                          </svg>
+                        </button>
+                        <button type="button"
+                          class="adjust-stock-btn p-1 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
+                          data-sku="HB-1020" data-change="-1" title="Subtract 1 stock">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Toast notification container in dashboard -->
+            <div id="dashboard-toast"
+              class="absolute bottom-4 left-4 right-4 bg-slate-900 text-white px-3 py-2 rounded-lg text-[11px] font-medium flex items-center justify-between transform translate-y-16 opacity-0 transition-all duration-300">
+              <span class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span id="dashboard-toast-msg">Stock level updated</span>
+              </span>
+              <span class="text-[10px] text-slate-400">Just now</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted Companies Section -->
+  <section class="py-12 border-y border-slate-100 bg-slate-50/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center text-xs font-semibold uppercase tracking-wider text-slate-400 mb-8">
+        Trusted by operations teams at fast-growing brands
+      </h2>
+      <div
+        class="flex flex-wrap items-center justify-center gap-y-8 gap-x-12 md:gap-x-16 lg:gap-x-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+        <!-- Logo 1 -->
+        <div class="flex items-center gap-2 select-none">
+          <svg class="w-7 h-7 text-slate-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+          <span class="text-lg font-bold text-slate-800 tracking-tight">TechCorp</span>
+        </div>
+        <!-- Logo 2 -->
+        <div class="flex items-center gap-2 select-none">
+          <svg class="w-7 h-7 text-slate-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+            </path>
+          </svg>
+          <span class="text-lg font-bold text-slate-800 tracking-tight">Acme Labs</span>
+        </div>
+        <!-- Logo 3 -->
+        <div class="flex items-center gap-2 select-none">
+          <svg class="w-7 h-7 text-slate-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z">
+            </path>
+          </svg>
+          <span class="text-lg font-bold text-slate-800 tracking-tight">GlobalFlow</span>
+        </div>
+        <!-- Logo 4 -->
+        <div class="flex items-center gap-2 select-none">
+          <svg class="w-7 h-7 text-slate-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+            </path>
+          </svg>
+          <span class="text-lg font-bold text-slate-800 tracking-tight">Apex Lock</span>
+        </div>
+        <!-- Logo 5 -->
+        <div class="flex items-center gap-2 select-none">
+          <svg class="w-7 h-7 text-slate-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          <span class="text-lg font-bold text-slate-800 tracking-tight">LogiLink</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 md:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-600 font-mono">Capabilities</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Everything You Need To Manage Inventory
+        </h3>
+        <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Robust, secure, and modern tools to automate supply chains, monitor real-time stock levels, and accelerate
+          growth.
+        </p>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1: Product Management -->
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-200/80 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+          <div
+            class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+            </svg>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Product Management</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Easily categorize items, add unique custom attributes, assign SKUs, and upload high-resolution images for
+            unified item cataloging.
+          </p>
+        </div>
+
+        <!-- Card 2: Stock Tracking -->
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-200/80 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+          <div
+            class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
+              </path>
+            </svg>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Stock Tracking</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Track stock levels automatically from receiving docks to customer shipment, with robust batch numbers and
+            serial code tracking.
+          </p>
+        </div>
+
+        <!-- Card 3: Analytics Dashboard -->
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-200/80 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+          <div
+            class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+              </path>
+            </svg>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Analytics Dashboard</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Acquire actionable insights on product turnover, stock valuation, margins, and sales trends to make
+            data-driven buying decisions.
+          </p>
+        </div>
+
+        <!-- Card 4: Supplier Management -->
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-200/80 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+          <div
+            class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+              </path>
+            </svg>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Supplier Management</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Organize active suppliers, draft purchase orders directly inside the system, track fulfillment rates, and
+            manage unit costs.
+          </p>
+        </div>
+
+        <!-- Card 5: Secure Authentication -->
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-200/80 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+          <div
+            class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+              </path>
+            </svg>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Secure Authentication</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Enable strict security protocols with role-based access, automated system logs, single sign-on (SSO), and
+            two-factor safety.
+          </p>
+        </div>
+
+        <!-- Card 6: Real-Time Updates -->
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-200/80 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+          <div
+            class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.2"></path>
+            </svg>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Real-Time Updates</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Synchronize stock levels instantly across all devices, mobile scanners, and distribution channels to
+            eliminate double-selling.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Preview Section -->
+  <section class="py-20 md:py-28 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Left: Beautiful, Interactive Mockup Screenshot -->
+        <div class="relative order-2 lg:order-1">
+          <!-- Radial abstract backdrops -->
+          <div class="absolute -top-12 -left-12 -z-10 w-72 h-72 bg-blue-50 rounded-full blur-2xl opacity-60"></div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl shadow-xl overflow-hidden p-5 sm:p-7">
+            <!-- Mock Header -->
+            <div class="flex items-center justify-between pb-5 border-b border-slate-200/80 mb-5">
+              <div>
+                <h4 class="text-sm font-bold text-slate-800">Inventory Distribution</h4>
+                <p class="text-[10px] text-slate-400">Monthly warehouse breakdown</p>
+              </div>
+              <div class="flex gap-2">
+                <button type="button" id="preview-btn-main"
+                  class="px-2.5 py-1 text-[10px] font-semibold bg-blue-600 text-white rounded-md shadow-sm">Main
+                  Hub</button>
+                <button type="button" id="preview-btn-east"
+                  class="px-2.5 py-1 text-[10px] font-semibold bg-white text-slate-600 border border-slate-200 rounded-md hover:bg-slate-50">East
+                  Hub</button>
+              </div>
+            </div>
+
+            <!-- Distribution chart and sidebar lists -->
+            <div class="grid sm:grid-cols-12 gap-6 items-center">
+              <!-- Visual category circle (SVG) -->
+              <div class="sm:col-span-5 flex flex-col items-center justify-center">
+                <div class="relative w-28 h-28 flex items-center justify-center">
+                  <!-- Custom SVG Donut Chart -->
+                  <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                    <circle cx="18" cy="18" r="15.915" fill="none" stroke="#f1f5f9" stroke-width="4.2"></circle>
+                    <!-- Blue: Electronics (55%) -->
+                    <circle id="donut-slice-blue" cx="18" cy="18" r="15.915" fill="none" stroke="#2563eb"
+                      stroke-width="4.2" stroke-dasharray="55 45" stroke-dashoffset="0"
+                      class="transition-all duration-500"></circle>
+                    <!-- Yellow: Furniture (25%) -->
+                    <circle id="donut-slice-yellow" cx="18" cy="18" r="15.915" fill="none" stroke="#eab308"
+                      stroke-width="4.2" stroke-dasharray="25 75" stroke-dashoffset="-55"
+                      class="transition-all duration-500"></circle>
+                    <!-- Slate: Apparel (20%) -->
+                    <circle id="donut-slice-slate" cx="18" cy="18" r="15.915" fill="none" stroke="#64748b"
+                      stroke-width="4.2" stroke-dasharray="20 80" stroke-dashoffset="-80"
+                      class="transition-all duration-500"></circle>
+                  </svg>
+                  <div class="absolute text-center">
+                    <span id="donut-center-pct" class="text-lg font-bold text-slate-800">55%</span>
+                    <p class="text-[8px] text-slate-400 uppercase tracking-wider">Electronics</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Details lists -->
+              <div class="sm:col-span-7 space-y-3">
+                <div
+                  class="flex items-center justify-between text-xs p-2 rounded-lg bg-white border border-slate-100 hover:border-slate-200 transition-colors">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                    <span class="font-medium text-slate-700">Electronics</span>
+                  </div>
+                  <span id="preview-val-elec" class="font-bold text-slate-900">$197,032</span>
+                </div>
+                <div
+                  class="flex items-center justify-between text-xs p-2 rounded-lg bg-white border border-slate-100 hover:border-slate-200 transition-colors">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+                    <span class="font-medium text-slate-700">Furniture</span>
+                  </div>
+                  <span id="preview-val-furn" class="font-bold text-slate-900">$89,560</span>
+                </div>
+                <div
+                  class="flex items-center justify-between text-xs p-2 rounded-lg bg-white border border-slate-100 hover:border-slate-200 transition-colors">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-slate-500"></span>
+                    <span class="font-medium text-slate-700">Apparel</span>
+                  </div>
+                  <span id="preview-val-app" class="font-bold text-slate-900">$71,648</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Warehouse alert banner inside mockup -->
+            <div id="preview-alert-pill"
+              class="mt-5 p-2.5 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-between text-[11px] text-amber-800 transition-all duration-300">
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-amber-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                  </path>
+                </svg>
+                <span>Stock for <strong>Ergonomic Office Chair</strong> is below threshold.</span>
+              </span>
+              <button type="button" id="preview-restock-btn"
+                class="px-2 py-0.5 bg-amber-600 text-white rounded text-[10px] font-semibold hover:bg-amber-700 transition-colors">Restock</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="order-1 lg:order-2 space-y-6">
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-600 font-mono">Enterprise</h2>
+          <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Designed For Absolute Visibility
+          </h3>
+          <p class="text-base text-slate-600 leading-relaxed">
+            Gain unified transparency over your entire multi-warehouse distribution. Eliminate data isolation, track
+            stock velocity, and prevent write-offs.
+          </p>
+
+          <ul class="space-y-4 pt-2">
+            <li class="flex items-start gap-3 text-slate-700">
+              <div
+                class="flex items-center justify-center w-5.5 h-5.5 rounded-full bg-emerald-100 text-emerald-700 mt-0.5 shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-slate-900 block text-[15px]">Track inventory in real time</span>
+                <span class="text-xs text-slate-500">Every single SKU is tracked step-by-step from arrival to
+                  shipping.</span>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3 text-slate-700">
+              <div
+                class="flex items-center justify-center w-5.5 h-5.5 rounded-full bg-emerald-100 text-emerald-700 mt-0.5 shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-slate-900 block text-[15px]">Low stock alerts</span>
+                <span class="text-xs text-slate-500">Automatic notifications trigger immediately when stock drops below
+                  threshold.</span>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3 text-slate-700">
+              <div
+                class="flex items-center justify-center w-5.5 h-5.5 rounded-full bg-emerald-100 text-emerald-700 mt-0.5 shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-slate-900 block text-[15px]">Product categorization</span>
+                <span class="text-xs text-slate-500">Structure items with dynamic hierarchical categories, locations,
+                  and bins.</span>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3 text-slate-700">
+              <div
+                class="flex items-center justify-center w-5.5 h-5.5 rounded-full bg-emerald-100 text-emerald-700 mt-0.5 shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-slate-900 block text-[15px]">Inventory valuation</span>
+                <span class="text-xs text-slate-500">Evaluate inventory value instantly using standard FIFO, LIFO, or
+                  WAC methods.</span>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3 text-slate-700">
+              <div
+                class="flex items-center justify-center w-5.5 h-5.5 rounded-full bg-emerald-100 text-emerald-700 mt-0.5 shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-slate-900 block text-[15px]">Secure access control</span>
+                <span class="text-xs text-slate-500">Restrict edit options and ensure only specific users alter critical
+                  records.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="py-20 md:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Stats grid -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+        <!-- Stat Card 1 -->
+        <div
+          class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 text-center hover:shadow-lg transition-shadow duration-300">
+          <div class="text-3xl sm:text-4.5xl font-extrabold text-blue-600 tracking-tight mb-2">10,000+</div>
+          <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Products Managed</p>
+        </div>
+
+        <!-- Stat Card 2 -->
+        <div
+          class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 text-center hover:shadow-lg transition-shadow duration-300">
+          <div class="text-3xl sm:text-4.5xl font-extrabold text-blue-600 tracking-tight mb-2">500+</div>
+          <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Businesses</p>
+        </div>
+
+        <!-- Stat Card 3 -->
+        <div
+          class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 text-center hover:shadow-lg transition-shadow duration-300">
+          <div class="text-3xl sm:text-4.5xl font-extrabold text-blue-600 tracking-tight mb-2">99.9%</div>
+          <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Accuracy</p>
+        </div>
+
+        <!-- Stat Card 4 -->
+        <div
+          class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 text-center hover:shadow-lg transition-shadow duration-300">
+          <div class="text-3xl sm:text-4.5xl font-extrabold text-blue-600 tracking-tight mb-2">24/7</div>
+          <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Availability</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-20 md:py-28 bg-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-600 font-mono">Workflow</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">How It Works</h3>
+        <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto leading-relaxed">
+          Get set up in minutes. Empower your fulfillment operations with our direct workflow.
+        </p>
+      </div>
+
+      <!-- Step Cards Container -->
+      <div class="relative grid md:grid-cols-4 gap-8">
+
+        <!-- Connecting Line for Desktop (MD screen and up) -->
+        <div
+          class="hidden md:block absolute top-12 left-[12%] right-[12%] h-0.5 border-t border-dashed border-slate-200 -z-10">
+        </div>
+
+        <!-- Step 1 -->
+        <div class="flex flex-col items-center text-center group">
+          <div
+            class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-6 font-bold text-lg text-blue-600 shadow-sm group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+            1
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Create Account</h4>
+          <p class="text-xs text-slate-500 max-w-[200px] leading-relaxed">
+            Register your company workspace and configure warehouses in just three clicks.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-col items-center text-center group">
+          <div
+            class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-6 font-bold text-lg text-blue-600 shadow-sm group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+            2
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Add Inventory</h4>
+          <p class="text-xs text-slate-500 max-w-[200px] leading-relaxed">
+            Import product catalogs via CSV or connect directly using standard integrations.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-col items-center text-center group">
+          <div
+            class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-6 font-bold text-lg text-blue-600 shadow-sm group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+            3
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Monitor Stock</h4>
+          <p class="text-xs text-slate-500 max-w-[200px] leading-relaxed">
+            Keep tabs on quantities and receive low-stock system notifications in real time.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex flex-col items-center text-center group">
+          <div
+            class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-6 font-bold text-lg text-blue-600 shadow-sm group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+            4
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Grow Business</h4>
+          <p class="text-xs text-slate-500 max-w-[200px] leading-relaxed">
+            Analyze report dynamics to boost product turnover and maximize your bottom line.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="test" class="py-20 md:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-600">Client Reviews</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          What Operations Managers Say
+        </h3>
+        <p class="text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+          Discover how companies cut stockouts and automated ordering with InventoryPro.
+        </p>
+      </div>
+
+      <!-- Testimonial Grid -->
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <!-- Rating Stars -->
+          <div class="flex items-center gap-1 text-amber-500 mb-6">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-6 italic">
+            "Before InventoryPro, we struggled with stock variance on key electronics lines. Now, warehouse updates sync
+            instantly. Our stock accuracy rose to 99.8% in just weeks."
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-sm text-blue-700">
+              SM
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-900">Sarah Jenkins</h5>
+              <p class="text-[11px] text-slate-500">VP of Logistics, ElectroTech</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <!-- Rating Stars -->
+          <div class="flex items-center gap-1 text-amber-500 mb-6">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-6 italic">
+            "The low stock email notifications are a life saver. The interface is clean, quick, and easy for our floor
+            supervisors to master. It has cut administrative overhead by 40%."
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-sm text-blue-700">
+              MR
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-900">Marcus Rivera</h5>
+              <p class="text-[11px] text-slate-500">Director of Operations, Novo Brands</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <!-- Rating Stars -->
+          <div class="flex items-center gap-1 text-amber-500 mb-6">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-6 italic">
+            "Integration was flawless. We imported all our historical supplier CSV data and consolidated two remote
+            warehouses in under 24 hours. The cost metrics are perfectly accurate."
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-sm text-blue-700">
+              DK
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-900">David Kim</h5>
+              <p class="text-[11px] text-slate-500">Warehouse Manager, Apex Logistics</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+
+
+
+      <!-- CTA Section -->
+      <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="bg-blue-600 rounded-3xl p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-200">
+            <!-- Abstract shape decorations inside card -->
+            <div class="absolute -top-12 -right-12 w-64 h-64 bg-blue-500 rounded-full blur-2xl opacity-40"></div>
+            <div class="absolute -bottom-12 -left-12 w-64 h-64 bg-blue-700 rounded-full blur-2xl opacity-40"></div>
+
+            <div class="max-w-3xl mx-auto space-y-6 relative z-10">
+              <h2 class="text-3xl sm:text-4.5xl font-extrabold tracking-tight">
+                Ready To Simplify Inventory Management?
+              </h2>
+              <p class="text-base text-blue-100 max-w-xl mx-auto leading-relaxed">
+                Join hundreds of operations managers automating their supply chain. Try free for 14 days, setup in
+                minutes.
+              </p>
+              <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#get-started"
+                  class="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl shadow-md hover:bg-blue-50 active:bg-blue-100 hover:scale-[1.02] transition-all text-[15px]">
+                  Start Your Free Trial
+                </a>
+                <a href="#contact"
+                  class="px-8 py-4 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 border border-blue-500 hover:border-blue-400 hover:scale-[1.02] transition-all text-[15px]">
+                  Speak To An Expert
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section (Form and Details) -->
+      <section id="contact" class="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-12 gap-12 items-start">
+
+            <!-- Left Side: Details -->
+            <div class="lg:col-span-5 space-y-8">
+              <div class="space-y-4">
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-600 font-mono">Get In Touch</h2>
+                <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight">We're Here To Help</h3>
+                <p class="text-base text-slate-600 leading-relaxed">
+                  Have questions about multi-warehouse setup, custom integrations, or our plans? Send a query and our
+                  product consultants will get back within 2 hours.
+                </p>
+              </div>
+
+              <div class="space-y-4 text-xs text-slate-700">
+                <!-- Contact Row 1 -->
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shadow-sm shrink-0">
+                    <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-bold text-slate-900 text-[13px]">Phone Support</p>
+                    <p class="text-slate-500 mt-0.5">+1 (800) 555-0199</p>
+                  </div>
+                </div>
+
+                <!-- Contact Row 2 -->
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shadow-sm shrink-0">
+                    <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-bold text-slate-900 text-[13px]">Email Query</p>
+                    <p class="text-slate-500 mt-0.5">support@inventorypro.co</p>
+                  </div>
+                </div>
+
+                <!-- Contact Row 3 -->
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shadow-sm shrink-0">
+                    <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-bold text-slate-900 text-[13px]">Corporate Hub</p>
+                    <p class="text-slate-500 mt-0.5">100 Pine Street, San Francisco, CA 94111</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <div class="lg:col-span-7 bg-white p-6 sm:p-10 border border-slate-200 rounded-2xl shadow-sm">
+              <form id="contact-form" class="space-y-5">
+                <div class="grid sm:grid-cols-2 gap-5">
+                  <div class="space-y-1.5">
+                    <label for="first-name" class="text-xs font-semibold text-slate-700">First name</label>
+                    <input type="text" id="first-name" name="first-name" required
+                      class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-blue-600 focus:bg-white transition-all">
+                  </div>
+                  <div class="space-y-1.5">
+                    <label for="last-name" class="text-xs font-semibold text-slate-700">Last name</label>
+                    <input type="text" id="last-name" name="last-name" required
+                      class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-blue-600 focus:bg-white transition-all">
+                  </div>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="email" class="text-xs font-semibold text-slate-700">Business email</label>
+                  <input type="email" id="email" name="email" required
+                    class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-blue-600 focus:bg-white transition-all">
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="company" class="text-xs font-semibold text-slate-700">Company name</label>
+                  <input type="text" id="company" name="company"
+                    class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-blue-600 focus:bg-white transition-all">
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="message" class="text-xs font-semibold text-slate-700">How can we help?</label>
+                  <textarea id="message" name="message" rows="4" required
+                    class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-blue-600 focus:bg-white transition-all resize-none"></textarea>
+                </div>
+
+                <div>
+                  <button type="submit"
+                    class="w-full inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-xl transition-all duration-150 shadow-sm hover:shadow-md shadow-blue-200">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+
+              <!-- Success Alert -->
+              <div id="contact-success-alert"
+                class="hidden mt-4 p-4 rounded-xl bg-emerald-50 border border-emerald-200 flex items-start gap-3 text-emerald-800">
+                <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                  stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                  <p class="font-bold text-xs">Query Sent Successfully!</p>
+                  <p class="text-[11px] text-emerald-600 mt-0.5">Thank you for writing to us. One of our consultants
+                    will reach out to you within 2 hours.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="bg-white border-t border-slate-200 py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-6 gap-8 md:gap-12 pb-12 border-b border-slate-200">
+
+            <!-- Logo and About -->
+            <div class="col-span-2 space-y-5">
+              <a href="#home" class="flex items-center gap-2.5">
+                <div
+                  class="flex items-center justify-center w-9 h-9 rounded-lg bg-blue-600 text-white shadow shadow-blue-200">
+                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                  </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-slate-900">Inventory<span
+                    class="text-blue-600">Pro</span></span>
+              </a>
+              <p class="text-xs text-slate-500 leading-relaxed max-w-xs">
+                Complete inventory transparency, stock optimization, and automated warehouse control in one premium SaaS
+                dashboard.
+              </p>
+              <div class="flex items-center gap-3">
+                <!-- Social Icon Twitter -->
+                <a href="#"
+                  class="p-2 bg-slate-50 hover:bg-blue-50 text-slate-400 hover:text-blue-600 border border-slate-100 rounded-lg transition-colors"
+                  aria-label="Twitter">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                  </svg>
+                </a>
+                <!-- Social Icon LinkedIn -->
+                <a href="#"
+                  class="p-2 bg-slate-50 hover:bg-blue-50 text-slate-400 hover:text-blue-600 border border-slate-100 rounded-lg transition-colors"
+                  aria-label="LinkedIn">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+                <!-- Social Icon GitHub -->
+                <a href="#"
+                  class="p-2 bg-slate-50 hover:bg-blue-50 text-slate-400 hover:text-blue-600 border border-slate-100 rounded-lg transition-colors"
+                  aria-label="GitHub">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="space-y-4">
+              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Company</h4>
+              <ul class="space-y-2.5 text-xs text-slate-500 font-sans">
+                <li><a href="#home" class="hover:text-blue-600 transition-colors">About Us</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition-colors">Careers</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition-colors">Press Room</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition-colors">Trust Center</a></li>
+              </ul>
+            </div>
+
+            <!-- Features Links -->
+            <div class="space-y-4">
+              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Product</h4>
+              <ul class="space-y-2.5 text-xs text-slate-500 font-sans">
+                <li><a href="#features" class="hover:text-blue-600 transition-colors">Stock Tracking</a></li>
+                <li><a href="#features" class="hover:text-blue-600 transition-colors">Purchase Orders</a></li>
+                <li><a href="#features" class="hover:text-blue-600 transition-colors">Integrations</a></li>
+                <li><a href="#features" class="hover:text-blue-600 transition-colors">Barcoding API</a></li>
+              </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="space-y-4">
+              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Resources</h4>
+              <ul class="space-y-2.5 text-xs text-slate-500 font-sans">
+                <li><a href="#" class="hover:text-blue-600 transition-colors">Documentation</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition-colors">SaaS Blog</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition-colors">Video Guides</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition-colors">System Status</a></li>
+              </ul>
+            </div>
+
+            <!-- Newsletter Sign-up -->
+            <div class="col-span-2 md:col-span-2 space-y-4">
+              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider font-sans">Subscribe to Newsletter
+              </h4>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                Get logistics advice and warehouse news directly in your inbox.
+              </p>
+              <form id="newsletter-form" class="flex gap-2">
+                <input type="email" id="newsletter-email" placeholder="Your email address" required
+                  class="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all">
+                <button type="submit"
+                  class="px-4 py-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold rounded-lg text-xs transition-colors shadow shadow-blue-200">
+                  Subscribe
+                </button>
+              </form>
+              <p id="newsletter-msg" class="hidden text-[10px] text-emerald-600 font-semibold"></p>
+            </div>
+
+          </div>
+
+          <!-- Copyright and Policy links -->
+          <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-[11px] text-slate-400">
+              &copy; 2026 InventoryPro Inc. All rights reserved. Built for professional warehouse teams.
+            </p>
+            <div class="flex items-center gap-6 text-[11px] text-slate-400">
+              <a href="#" class="hover:text-blue-600 transition-colors">Privacy Policy</a>
+              <a href="#" class="hover:text-blue-600 transition-colors">Terms of Service</a>
+              <a href="#" class="hover:text-blue-600 transition-colors">SLA Agreement</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Watch Demo Modal -->
+      <div id="demo-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" role="dialog" aria-modal="true">
+        <!-- Overlay back shadow -->
+        <div id="demo-modal-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"></div>
+
+        <!-- Modal Panel -->
+        <div class="flex min-h-full items-center justify-center p-4 sm:p-6 text-center">
+          <div
+            class="relative w-full max-w-3xl transform overflow-hidden rounded-2xl bg-white p-4 text-left shadow-2xl transition-all border border-slate-100">
+
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+              <h4 class="text-sm font-bold text-slate-900">InventoryPro Dashboard Overview (2 Min Demo)</h4>
+              <button type="button" id="close-demo-btn"
+                class="p-1 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-50 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Video Player Mockup -->
+            <div
+              class="relative aspect-video bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center group shadow-inner">
+
+              <!-- Mock Video Poster -->
+              <div id="demo-video-poster"
+                class="absolute inset-0 z-10 flex flex-col items-center justify-center p-8 bg-slate-900 text-center text-white">
+                <div
+                  class="w-16 h-16 rounded-full bg-blue-600/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 cursor-pointer"
+                  id="play-demo-inner">
+                  <svg class="w-8 h-8 fill-current ml-1" viewBox="0 0 20 20">
+                    <path d="M4.018 14L14.41 10 4.018 6z" />
+                  </svg>
+                </div>
+                <p class="mt-4 font-bold text-sm">Interactive Product Walkthrough</p>
+                <p class="text-xs text-slate-400 max-w-sm mt-1">See how easy it is to receive shipments, set stock
+                  limits, and automate purchase orders.</p>
+              </div>
+
+              <!-- Mock Video Player (Simulated Screen) -->
+              <div id="demo-video-screen"
+                class="hidden w-full h-full flex flex-col justify-between p-4 text-white relative bg-cover bg-center"
+                style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800');">
+                <!-- Simulated gradient overlay -->
+                <div class="absolute inset-0 bg-slate-950/65 -z-10"></div>
+
+                <div class="flex items-center justify-between z-10">
+                  <span class="text-xs font-semibold px-2 py-0.5 bg-blue-600/90 rounded-full">InventoryPro Live
+                    Demo</span>
+                  <span id="demo-video-timer" class="font-mono text-xs text-slate-300">0:00 / 1:45</span>
+                </div>
+
+                <!-- Animated statistics and alerts on screen -->
+                <div
+                  class="z-10 max-w-md bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl space-y-2 transform translate-y-2 transition-transform"
+                  id="demo-video-caption-box">
+                  <p class="text-xs font-bold text-blue-300 uppercase tracking-wider" id="demo-video-caption-title">
+                    Stock Check Automation</p>
+                  <p class="text-xs text-slate-100" id="demo-video-caption-text">Setting threshold level for Ultra
+                    Wireless Keyboard (KB-8902)...</p>
+                </div>
+
+                <!-- Video Player Controls -->
+                <div class="flex items-center gap-3 z-10 pt-2 border-t border-white/10">
+                  <button type="button" id="demo-video-playpause"
+                    class="text-white hover:text-blue-400 transition-colors">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" id="demo-playpause-icon">
+                      <!-- Pause Icon -->
+                      <path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z" />
+                    </svg>
+                  </button>
+                  <div class="flex-1 bg-white/20 rounded-full h-1.5 overflow-hidden cursor-pointer"
+                    id="demo-video-progress-bar">
+                    <div class="bg-blue-500 h-full rounded-full w-0" id="demo-video-progress-fill"></div>
+                  </div>
+                  <span class="text-[10px] text-slate-300 font-mono">1080p HD</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Javascript File -->
+      <script src="./script.js"></script>
+</body>
+
+</html>
