@@ -87,7 +87,7 @@ Create a responsive and visually appealing web interface.
 
 ---
 
-## ✅ Task 4: Complex Form Validation & Dynamic DOM Manipulation
+##  Task 4: Complex Form Validation & Dynamic DOM Manipulation
 
 ### Objective
 Enhance user experience through advanced validation and dynamic updates.
