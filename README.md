@@ -1,6 +1,6 @@
 #  Web Development Internship Projects
 
-This repository contains all the tasks completed during my Web Development Internship. Throughout this internship, I worked on building responsive user interfaces, integrating REST APIs, implementing user authentication, connecting databases, and deploying full-stack web applications.
+This repository contains all the tasks completed during My Web Development Internship. Throughout this internship, I worked on building responsive user interfaces, integrating REST APIs, implementing user authentication, connecting databases, and deploying Full-Stack web applications.
 
 ---
 
